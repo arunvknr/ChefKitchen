@@ -163,14 +163,14 @@ function Home() {
 
 
         <div className="flex-1 overflow-y-auto px-6 pl-10 py-10 no-scrollbar">
-          <div className={`grid grid-cols-2 sm:grid-cols-4 gap-12 mt-14  space-y-10 ${showOrders ? "md:grid-cols-3" : ""}`}>
+          <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 mt-14  gap-y-24 ${showOrders ? "md:grid-cols-3 sm:grid-cols-2"  : ""}`}>
             {dishes.map((item, idx) => {
               const size = selectedSizes[item.name] || "M";
               const addedKey = `${item.name}-${size}`;
               const isAdded = addedItems[addedKey];
 
               return (
-                <div key={idx} className="relative bg-[#1F1D2B] rounded-3xl pt-20 pb-6 px-4 text-center">
+                <div key={idx} className="relative bg-[#1F1D2B] rounded-3xl pt-20 pb-6 px-4 text-center p-5">
                   <img
                     src={item.img}
                     className="w-28 h-28 rounded-full absolute -top-14 left-1/2 -translate-x-1/2"
@@ -203,7 +203,7 @@ function Home() {
 
                   <button
                     onClick={() => handleSubmit(item)}
-                    className={`mt-4 px-23 py-2 rounded-lg text-sm font-semibold ${
+                    className={`mt-4  sm:w-auto px-21 py-2 rounded-lg text-sm font-semibold ${
                       isAdded ? "bg-green-600" : "bg-orange-500"
                     }`}
                   >

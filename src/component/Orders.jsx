@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Plus, Minus, Trash2, X } from "lucide-react";
+import { OrderContext } from "../context/OrderContext";
 
-function Orders({
-  orders = [],
+function Orders() {
+
+  const {   orders = [],
   increaseQty,
   decreaseQty,
   removeItem,
   onClose,
   showOrders,
-  onConfirmOrder,
-}) {
+  onConfirmOrder,} = useContext (OrderContext)
+
+
+
   const cartsection = [
     { id: 1, title: "dine-in" },
     { id: 2, title: "take-away" },
@@ -24,13 +28,14 @@ function Orders({
     (acc, item) => acc + item.price * item.qty,
     0
   );
+
   return (
     <div
       className={`bg-[#1f1d2b] text-white h-screen flex flex-col
       transition-transform duration-300 z-50
       ${
         showOrders
-          ? "translate-x-0 fixed right-0 w-[90%] lg:w-[30%]"
+          ? "translate-x-0 fixed right-0 w-[96%] lg:w-[30%]"
           : "translate-x-full fixed right-0 w-[30%]"
       }`}
     >
@@ -62,8 +67,8 @@ function Orders({
 
         <div className="grid grid-cols-[1fr_80px_80px] font-bold text-sm text-gray-300">
           <p>Item</p>
-          <p className="text-center">Qty</p>
-          <p className="text-right">Price</p>
+          <p className="text-center ">Qty</p>
+          <p className="text-right ">Price</p>
         </div>
       </div>
       {/* ORDERS LIST */}
@@ -103,12 +108,12 @@ function Orders({
               </div>
 
               {/* ACTIONS */}
-              <div className="flex items-center gap-3 mt-3">
+              <div className="flex  gap-3 mt-3 ">
                 <input
-                  type="text"
-                  placeholder="Order Note"
-                  className="flex-1 bg-[#2d303e] rounded-lg px-4 py-3 text-sm text-gray-300 placeholder-gray-400"
-                />
+  type="text"
+  placeholder="Order Note"
+  className="w-full md:flex-1 bg-[#2d303e] rounded-lg px-4 py-3 text-sm"
+/>
 
                 <div className="flex gap-2">
                   <button

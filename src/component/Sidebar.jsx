@@ -6,6 +6,7 @@ import Email from "../assets/icn5.svg?react";
 import Notification from "../assets/icn6.svg?react";
 import Exit from "../assets/icn7.svg";
 import { Link } from "react-router-dom";
+import { div } from "framer-motion/client";
 
 
 const Sidebar = () => {
@@ -20,7 +21,8 @@ const Sidebar = () => {
   const [activeButton, setActiveButton] = useState(sideBarItems[0].id);
 
   return (
-    <div className="bg-[#1F1D2B] min-h-screen w-24 flex flex-col fixed top-0">
+    <div>
+      <div className=" hidden  bg-[#1F1D2B] min-h-screen w-24 md:flex flex-col fixed top-0">
       {/* Logo */}
       <div className="flex items-center justify-center mt-4">
         <img src="/Logo.png" alt="Logo" className="w-15 h-15" />
@@ -43,7 +45,7 @@ const Sidebar = () => {
           >
             {/* Orange circle behind icon */}
             <span
-              className={`absolute w-10 h-10 rounded-xl bg-orange-500
+              className={`absolute w-10 h-10 rounded-xl bg-button
                 transition-all duration-500 ease-in-out
                 ${
                   activeButton === item.id
@@ -108,12 +110,53 @@ const Sidebar = () => {
 
         {/* Exit button */}
         <Link to="/">
-          <button className="mt-23 mb-4">
-            <img src={Exit} alt="Exit" className="w-6 h-6 text-[#F99147]" />
+          <button className="flex  mt-42 cursor-pointer ">
+            <img src={Exit} alt="Exit" className=" w-6 h-6 text-button" />
           </button>
         </Link>
       </div>
-      
+    </div>
+       {/* Mobile Bottom Navbar */}
+<div className=" md:hidden
+    fixed bottom-3 left-3 right-3
+    h-16
+    flex items-center justify-around
+    bg-white/20 backdrop-blur-lg
+    border border-white/20
+    rounded-2xl
+    shadow-lg
+    z-50 ">
+  {sideBarItems.map((item,index) => (
+    <button
+      key={item.id}
+      onClick={() => setActiveButton(item.id)}
+      className={`relative ${index === (3&&2) ? "hidden":"flex"}   items-center justify-center w-12 h-12`}
+    >
+      {/* Active background */}
+      <span
+        className={`absolute w-10 h-10  rounded-xl bg-button transition-all duration-300
+          ${activeButton === item.id ? "opacity-100 scale-100" : "opacity-0 scale-75"}
+        `}
+      ></span>
+
+      {/* Icon */}
+      <span
+        className={`relative z-10
+          ${activeButton === item.id ? "text-white" : "text-button"}
+        `}
+      >
+        {item.icon}
+      </span>
+    </button>
+  ))}
+
+  {/* Exit */}
+  <Link to="/">
+    <button className="flex items-center justify-center w-12 h-12">
+      <img src={Exit} alt="Exit" className="w-6 h-6 text-button" />
+    </button>
+  </Link>
+</div>
     </div>
   );
 };

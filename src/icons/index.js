@@ -21,6 +21,8 @@ export const dishes = [
     bowls: "22 Bowls available",
     sizes: ["S", "M", "L"],
     type: ["dine-in"],
+    category:"our",
+   
   },
   {
     img: i2,
@@ -29,6 +31,7 @@ export const dishes = [
     bowls: "13 Bowls available",
     sizes: ["S", "M", "L"],
     type: ["delivery", "dine-in"],
+    category:"today",
   },
   {
     img: i3,
@@ -37,6 +40,8 @@ export const dishes = [
     bowls: "17 Bowls available",
     sizes: ["S", "M", "L"],
     type: ["dine-in"],
+    category:"our",
+
   },
   {
     img: i4,
@@ -45,6 +50,7 @@ export const dishes = [
     bowls: "22 Bowls available",
     sizes: ["S", "M", "L"],
     type: ["take-away", "dine-in"],
+    category:"today"
   },
   {
     img: i5,
@@ -53,6 +59,7 @@ export const dishes = [
     bowls: "13 Bowls available",
     sizes: ["S", "M", "L"],
     type: ["dine-in"],
+    category:"our",
   },
   {
     img: i6,
@@ -61,7 +68,9 @@ export const dishes = [
     bowls: "17 Bowls available",
     sizes: ["S", "M", "L"],
     type: ["delivery", "dine-in"],
+    category:"today"
   },
+
   {
     img: i7,
     name: "Spicy seasoned seafood noodles",
@@ -69,6 +78,7 @@ export const dishes = [
     bowls: "16 Bowls available",
     sizes: ["S", "M", "L"],
     type: ["delivery", "dine-in"],
+    category:"south",
   },
   {
     img: i8,
@@ -77,6 +87,7 @@ export const dishes = [
     bowls: "13 Bowls available",
     sizes: ["S", "M", "L"],
     type: ["take-away", "dine-in"],
+    category:"our",
   },
   {
     img: i9,
@@ -85,5 +96,6 @@ export const dishes = [
     bowls: "20 Bowls available",
     sizes: ["S", "M", "L"],
     type: ["dine-in", "take-away"],
+    category:"south",
   },
 ];

@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { CircleCheckBig } from "lucide-react";
+import { OrderContext } from "../context/OrderContext";
 
-function ConfirmOrderReceipt({ orders = [], category, onConfirm }) {
+function ConfirmOrderReceipt() {
+
+  const {
+    orders = [], category, onConfirm 
+  } = useContext (OrderContext);
+  
   const now = new Date();
 
   const date = now.toLocaleDateString();

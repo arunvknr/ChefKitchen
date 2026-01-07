@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { OrderContext } from "../context/OrderContext";
 
-const FilterDishes = ({orderType, setOrderType}) => {
+const FilterDishes = () => {
+  const {
+    orderType, setOrderType
+  } = useContext (OrderContext)
   return (
     <div className=" flex justify-between sticky top-0 z-30 py-4  bg-gray-800 ">
       <span className="text-2xl">Choose Dishes</span>

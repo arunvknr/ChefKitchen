@@ -2,8 +2,8 @@ import { useState } from "react";
 
 import "./App.css";
 
-import Home from "./component/Home";
-import ExplorePage from "./component/ExplorePage";
+import Home from "./pages/Home";
+import ExplorePage from "./pages/ExplorePage";
 import { Route, Routes } from "react-router-dom";
 
 function App() {

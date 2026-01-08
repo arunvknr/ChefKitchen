@@ -60,7 +60,7 @@ const Header = () => {
       </div>
 
       {/* Tabs */}
-      <div className="flex mt-6 space-x-6 border-b border-gray-600 overflow-x-auto">
+      <div className="flex mt-6 space-x-6 border-b border-gray-600 overflow-x-auto no-scrollbar p">
         {tabs.map((tab) => (
           <button
             key={tab.id}
@@ -79,5 +79,4 @@ const Header = () => {
     </div>
   );
 };
-
 export default Header;

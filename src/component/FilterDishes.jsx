@@ -6,8 +6,8 @@ const FilterDishes = () => {
     orderType, setOrderType
   } = useContext (OrderContext)
   return (
-    <div className=" flex justify-between sticky top-0 z-30 py-4  bg-gray-800 ">
-      <span className="text-2xl">Choose Dishes</span>
+    <div className=" flex justify-between sticky top-0 z-30 py-4  bg-gray-800  ">
+      <span className="text-2xl ">Choose Dishes</span>
       <select
         value={orderType}
         onChange={(e) => setOrderType(e.target.value)}

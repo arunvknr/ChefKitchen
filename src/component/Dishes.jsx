@@ -16,8 +16,8 @@ const Dishes = () => {
   } =useContext(OrderContext);
   return (
       <div
-  className={`grid grid-cols-2 md:grid-cols-3 gap-4 gap-y-20 mt-20
-    ${showOrders ? " lg:grid-cols-2" : "md:grid-cols-3 lg:grid-cols-4"} ${showOrders ? "sm:grid-cols-2" : "sm:grid-cols-3,"}
+  className={`grid grid-cols-2 md:grid-cols-3 gap-4 gap-y-20 mt-20 w-full
+    ${showOrders ? " lg:grid-cols-3" : "md:grid-cols-3 gap-4 lg:grid-cols-4 "} ${showOrders ? "grid gird-cols-1 sm:grid-cols-3" : "sm:grid-cols-4,"}
   `}
 >
   {filteredDishes.length === 0 && (
@@ -40,7 +40,7 @@ const Dishes = () => {
               return (
                 <div
                   key={idx}
-                  className=" relative bg-[#1F1D2B] rounded-3xl  sm:w-[200px] md:w-[200px] lg:w-[210px] min-h-8 p-3 text-center mx-auto pb-8 " >
+                  className=" relative bg-[#1F1D2B] rounded-3xl  sm:w-[230px] md:w-[230px] lg:w-[280px] p-3 text-center pb-8 " >
                   {/* Image */}
                   <img
                     src={item.img}

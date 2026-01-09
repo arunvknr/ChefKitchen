@@ -31,14 +31,14 @@ function Orders() {
 
   return (
     <div
-      className={`bg-[#1f1d2b] text-white h-screen flex flex-col
-      transition-transform duration-300 z-50
-      ${
-        showOrders
-          ? "translate-x-0 fixed right-0 w-[96%] lg:w-[30%]"
-          : "translate-x-full fixed right-0 w-[30%]"
-      }`}
-    >
+  className={`bg-[#1f1d2b] text-white h-screen flex flex-col
+  fixed top-0 right-0 z-50
+  w-full md:w-[90%] lg:w-[30%]
+  transition-transform duration-300 ease-in-out
+  ${
+    showOrders ? "translate-x-0" : "translate-x-full"
+  }`}
+>
       {/* HEADER */}
       <div className="p-4 flex items-center">
         <h2 className="text-2xl font-semibold">Orders</h2>

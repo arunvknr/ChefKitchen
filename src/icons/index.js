@@ -8,9 +8,9 @@ import i7 from "../assets/img8.svg"
 import i8 from "../assets/img9.svg"
 import i9 from "../assets/img10.svg"
 export const tabs = [
-  { id: "today", label: "Today Special" },
-  { id: "our", label: "Our Special" },
-  { id: "south", label: "South Indian Special" },
+  { id: "Today Special", label: "Today Special" },
+  { id: "Our Special", label: "Our Special" },
+  { id: "South Indian Special", label: "South Indian Special" },
 ];
 
 export const dishes = [
@@ -21,17 +21,21 @@ export const dishes = [
     bowls: "22 Bowls available",
     sizes: ["S", "M", "L"],
     type: ["dine-in"],
-    category:"our",
+    category:"Our Special",
+    categorys: "Noodles",
+    stock: 22,
    
   },
   {
     img: i2,
     name: "Hot spicy fried rice with omelet",
     basePrice: 3.29,
-    bowls: "13 Bowls available",
+    bowls: "13 Bowls available", 
     sizes: ["S", "M", "L"],
     type: ["delivery", "dine-in"],
-    category:"today",
+    category:"Today Special",
+    categorys: "Rice",
+    stock: 14,
   },
   {
     img: i3,
@@ -40,7 +44,10 @@ export const dishes = [
     bowls: "17 Bowls available",
     sizes: ["S", "M", "L"],
     type: ["dine-in"],
-    category:"our",
+    category:"Our Special",
+    categorys: "Noodles",
+    stock: 28,
+
 
   },
   {
@@ -50,7 +57,10 @@ export const dishes = [
     bowls: "22 Bowls available",
     sizes: ["S", "M", "L"],
     type: ["take-away", "dine-in"],
-    category:"today"
+    category:"Today Special",
+    categorys: "Noodles",
+    stock: 14,
+
   },
   {
     img: i5,
@@ -59,7 +69,10 @@ export const dishes = [
     bowls: "13 Bowls available",
     sizes: ["S", "M", "L"],
     type: ["dine-in"],
-    category:"our",
+    category:"Our Special",
+    categorys: "Rice",
+    stock: 34,
+
   },
   {
     img: i6,
@@ -68,7 +81,10 @@ export const dishes = [
     bowls: "17 Bowls available",
     sizes: ["S", "M", "L"],
     type: ["delivery", "dine-in"],
-    category:"today"
+    category:"Today Special",
+    categorys: "Noodles",
+    stock: 19,
+
   },
 
   {
@@ -78,7 +94,10 @@ export const dishes = [
     bowls: "16 Bowls available",
     sizes: ["S", "M", "L"],
     type: ["delivery", "dine-in"],
-    category:"south",
+    category:"South Indian Special",
+    categorys: "Noodles",
+    stock: 24,
+
   },
   {
     img: i8,
@@ -87,7 +106,10 @@ export const dishes = [
     bowls: "13 Bowls available",
     sizes: ["S", "M", "L"],
     type: ["take-away", "dine-in"],
-    category:"our",
+    category:"Today Special",
+    categorys: "Instant",
+    stock: 14,
+
   },
   {
     img: i9,
@@ -96,6 +118,9 @@ export const dishes = [
     bowls: "20 Bowls available",
     sizes: ["S", "M", "L"],
     type: ["dine-in", "take-away"],
-    category:"south",
+    category:"South Indian Special",
+    categorys: "Instant",
+    stock: 14,
+
   },
 ];

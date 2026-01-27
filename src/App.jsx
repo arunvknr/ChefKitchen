@@ -6,6 +6,10 @@ import Home from "./pages/Home";
 import ExplorePage from "./pages/ExplorePage";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./dashboard/Layout";
+import Category from "./dashboard/Category";
+import Products from "./dashboard/Products";
+import Orders from "./component/Orders";
+import AdminOrders from "./dashboard/AdminOrders";
 
 function App() {
   return (
@@ -14,11 +18,16 @@ function App() {
         <Routes>
           <Route path="/" element={<ExplorePage />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/layout" element={<Layout/>} />
+
+          <Route path="/layout" element={<Layout />}>
+            <Route path="category" element={<Category />} />
+            <Route path="products" element={<Products />} />
+            <Route path="orderadmin" element={<AdminOrders />} />
+          </Route>
         </Routes>
       </div>
     </>
   );
-} 
+}
 
 export default App;

@@ -16,7 +16,7 @@ const Dishes = () => {
   } =useContext(OrderContext);
   return (
       <div
-  className={`grid grid-cols-2 md:grid-cols-3 gap-4 gap-y-20 mt-20 w-full
+  className={`grid grid-cols-2 md:grid-cols-3 gap-4 gap-y-20 mt-20 w-full pb-20
     ${showOrders ? " lg:grid-cols-3" : "md:grid-cols-3 gap-4 lg:grid-cols-4 "} ${showOrders ? "grid gird-cols-1 sm:grid-cols-3" : "sm:grid-cols-4,"}
   `}
 >

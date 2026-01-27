@@ -3,9 +3,9 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div className='flex w-full  bg-amber-950  flex-row  justify-between p-6 h-fit'>
-        <span className='text-white lg:text-2xl text-sm h '>Dashboard</span>
-      <div className='bg-pink-500 flex flex-row gap-4'>
+    <div className='flex w-full   bg-amber-100  flex-row  justify-between p-6 h-fit overflow-hidden'>
+        <span className='text-blue-950 lg:text-2xl text-sm h '>Dashboard</span>
+      <div className=' flex flex-row gap-4'>
         <BellIcon/>
           <UserRound/>
         <Settings/>

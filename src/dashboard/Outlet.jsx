@@ -5,7 +5,7 @@ const Outlet = () => {
   return (
     <div className='w-full bg-green-400 h-screen'>
        
-      njklm;lm
+      
     </div>
   )
 }

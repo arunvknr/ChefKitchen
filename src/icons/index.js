@@ -104,7 +104,7 @@ export const dishes = [
     name: "Salted Pasta with mushroom sauce",
     basePrice: 25,
     bowls: "13 Bowls available",
-    sizes: ["S", "M", "L"],
+    sizes: ["S", "M", "F"],
     type: ["take-away", "dine-in"],
     category:"Today Special",
     categorys: "Instant",

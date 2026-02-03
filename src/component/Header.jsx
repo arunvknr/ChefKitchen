@@ -1,8 +1,9 @@
 
+
 import { Search, ShoppingCart } from "lucide-react";
 import React, { useContext } from "react";
 import { OrderContext } from "../context/OrderContext";
-import { tabs } from "../icons/index";
+import { tabs } from "../icons";
 
 const Header = () => {
   const {
@@ -14,14 +15,17 @@ const Header = () => {
     setShowOrders,
   } = useContext(OrderContext);
 
+  // ✅ SAFETY FIX (prevents crash)
+  const currentDate = today ? today : new Date();
+
   return (
     <div className="sticky top-0 z-30 bg-gray-800 px-6 pt-6">
-      {/* Top header: title, date, search, cart */}
+      {/* Top section */}
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-4xl font-bold">Chef Kitchen</h1>
           <p className="text-sm text-gray-300">
-            {today.toLocaleDateString("en-US", {
+            {currentDate.toLocaleDateString("en-US", {
               weekday: "long",
               day: "numeric",
               month: "long",
@@ -30,9 +34,9 @@ const Header = () => {
           </p>
         </div>
 
-        {/* Search and Cart */}
+        {/* Search + Cart */}
         <div className="flex gap-5 items-center">
-          {/* Search input (hidden on mobile) */}
+          {/* Search */}
           <div className="relative hidden sm:block">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input
@@ -42,25 +46,24 @@ const Header = () => {
             />
           </div>
 
-          {/* Cart button */}
+          {/* Cart */}
           <button
             onClick={() => setShowOrders(true)}
-            className="relative bg-orange-500 rounded-xl px-3 py-2 sm:px-4 sm:py-2 flex items-center justify-center"
+            className="relative bg-orange-500 rounded-xl px-3 py-2 sm:px-4 sm:py-2"
           >
-            <div className="relative flex items-center justify-center">
-              <ShoppingCart className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-              {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 flex items-center justify-center rounded-full bg-red-600 text-white text-[10px] sm:text-xs font-bold min-w-4 h-4 sm:min-w-[18px] sm:h-[18px] px-1">
-                  {cartCount}
-                </span>
-              )}
-            </div>
+            <ShoppingCart className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+
+            {cartCount > 0 && (
+              <span className="absolute -top-1 -right-1 flex items-center justify-center rounded-full bg-red-600 text-white text-[10px] sm:text-xs font-bold min-w-4 h-4 sm:min-w-[18px] sm:h-[18px] px-1">
+                {cartCount}
+              </span>
+            )}
           </button>
         </div>
       </div>
 
       {/* Tabs */}
-      <div className="flex mt-6 space-x-6 border-b border-gray-600 overflow-x-auto no-scrollbar p">
+      <div className="flex mt-6 space-x-6 border-b border-gray-600 overflow-x-auto no-scrollbar">
         {tabs.map((tab) => (
           <button
             key={tab.id}
@@ -70,6 +73,7 @@ const Header = () => {
             } relative`}
           >
             {tab.label}
+
             {active === tab.id && (
               <span className="absolute left-0 -bottom-px h-1 w-full bg-orange-400 rounded-full" />
             )}
@@ -79,4 +83,6 @@ const Header = () => {
     </div>
   );
 };
+
 export default Header;
+
